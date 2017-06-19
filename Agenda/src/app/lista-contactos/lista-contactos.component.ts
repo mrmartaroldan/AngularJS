@@ -24,14 +24,4 @@ export class ListaContactosComponent{
   notificarEliminacion(dato: string): void {
     this.clickEliminar.emit(dato);
   }
-
-  esGatesWozniak(contacto: string): boolean {
-    return contacto.indexOf('Gates') > -1 || 
-            contacto.indexOf('Wozniak') > -1;
-  }
-
-  esCookMusk(contacto: string): string{
-    return contacto.indexOf('Cook') > -1 || 
-            contacto.indexOf('Musk') > -1 ? '32px' : '14px';
-  }
 }
