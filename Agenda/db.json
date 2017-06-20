@@ -1,0 +1,31 @@
+{
+  "contactos": [
+    {
+      "nombre": "Marta",
+      "apellidos": "Arellano",
+      "movil": "636856147",
+      "email": "mrmartaroldan@gmail.com",
+      "facebook": "marta.rol",
+      "twitter": "@martaRol",
+      "id": 1
+    },
+    {
+      "nombre": "Bill",
+      "apellidos": "Gates",
+      "movil": "636458123",
+      "email": "bill.gates@gmail.com",
+      "facebook": "bill.gates",
+      "twitter": "@billGates",
+      "id": 2
+    },
+    {
+      "nombre": "Tim",
+      "apellidos": "Cook",
+      "movil": "696147856",
+      "email": "tim.cook@gmail.com",
+      "facebook": "tim.cook",
+      "twitter": "@timCook",
+      "id": 3
+    }
+  ]
+}
