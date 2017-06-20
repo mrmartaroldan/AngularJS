@@ -9,72 +9,112 @@
          'NgModel'. Para obtener la referencia a la instancia 'FormControl' del elemento,
          usamos una template reference variable, a la cual usamos como valor la propia
          directiva 'NgModel'. -->
-
+       
     <!-- Nombre -->
-    <label for="nombre">Nombre</label>
-    <input 
-        id="nombre"
-        placeholder="Ej. Tim"
-        type="text" 
-        ngModel 
-        name="nombre" 
-        #nombreRef="ngModel" 
-        required>
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="nombre">Nombre</label>
+            <input 
+                class="u-full-width"
+                id="nombre"
+                placeholder="Ej. Tim"
+                type="text" 
+                ngModel 
+                name="nombre" 
+                #nombreRef="ngModel" 
+                required>
 
-    <!-- Con la directiva 'NgIf' escribimos o no un elemento en el DOM, es decir,
-    lo renderizamos o no en el navegador en función de si la expresión indicada
-    como valor resuelve como 'true' o como 'false'-->
-    <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
-        El nombre es obligatorio
-    </div>   
+            <!-- Con la directiva 'NgIf' escribimos o no un elemento en el DOM, es decir,
+            lo renderizamos o no en el navegador en función de si la expresión indicada
+            como valor resuelve como 'true' o como 'false'-->
+            <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
+                El nombre es obligatorio
+            </div>   
+        </div>
+    </div>
+    
 
     <!-- Apellidos -->
-    <label for="apellidos">Apellidos</label>
-    <input 
-        id="apellidos"
-        placeholder="Ej. Cook"
-        type="text" 
-        ngModel 
-        name="apellidos" >
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="apellidos">Apellidos</label>
+            <input 
+                class="u-full-width"
+                id="apellidos"
+                placeholder="Ej. Cook"
+                type="text" 
+                ngModel 
+                name="apellidos" >
+        </div>
+    </div>    
 
     <!-- Móvil -->
-    <label for="movil">Móvil</label>
-    <input 
-        id="movil"
-        placeholder="Ej. 666 666 666"
-        type="tel" 
-        ngModel 
-        name="movil" >
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="movil">Móvil</label>
+            <input 
+                class="u-full-width"
+                id="movil"
+                placeholder="Ej. 666 666 666"
+                type="tel" 
+                ngModel 
+                name="movil" >
+        </div>
+    </div>    
+
 
     <!-- Email -->
-    <label for="email">Email</label>
-    <input 
-        id="email"
-        placeholder="Ej. tim.cook@example.com"
-        type="email" 
-        ngModel 
-        name="email" >
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="email">Email</label>
+            <input 
+                class="u-full-width"
+                id="email"
+                placeholder="Ej. tim.cook@example.com"
+                type="email" 
+                ngModel 
+                name="email" >
+        </div>        
+    </div>
+
 
     <!-- Facebook -->
-    <label for="facebook">Facebook</label>
-    <input 
-        id="facebook"
-        placeholder="Ej. tim.cook"
-        type="text" 
-        ngModel 
-        name="facebook" >
-
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="facebook">Facebook</label>
+            <input 
+                class="u-full-width"
+                id="facebook"
+                placeholder="Ej. tim.cook"
+                type="text" 
+                ngModel 
+                name="facebook" >
+        </div>        
+    </div>
 
     <!-- Twitter -->
-    <label for="twitter">Twitter</label>
-    <input 
-        id="twitter"
-        placeholder="Ej. @timcook"
-        type="text" 
-        ngModel 
-        name="Twitter" >
-    
-    <!-- -->
-    <button type="submit" [disabled]="formularioContacto.invalid">Guardar contacto</button>
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="twitter">Twitter</label>
+            <input 
+                class="u-full-width"
+                id="twitter"
+                placeholder="Ej. @timcook"
+                type="text" 
+                ngModel 
+                name="Twitter" >
+        </div>
+    </div>    
+            
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <button 
+                class="button-primary u-full-width"
+                type="submit" 
+                [disabled]="formularioContacto.invalid">
+                Guardar contacto
+            </button>
+        </div>
+    </div>
 
 </form>
