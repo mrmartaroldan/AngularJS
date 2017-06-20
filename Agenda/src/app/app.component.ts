@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactosService } from './contactos.service';
+import { Observable } from 'rxjs/Observable';
 
+import { ContactosService } from './contactos.service';
 import { Contacto } from './contacto';
 
 @Component({
@@ -15,7 +16,7 @@ import { Contacto } from './contacto';
 })
 export class AppComponent implements OnInit {
 
-  contactos: Contacto[];
+  contactos$: Observable<Contacto[]>;
 
   //Para hacer una intyección de dependencias necesitamos sí o sí hacerlo en el 
   //constructor de una clase. Tenemos que indicar un parámetro con un modificador
@@ -26,17 +27,20 @@ export class AppComponent implements OnInit {
   
   //En el hook 'OnInit' inicializamos los datos del componente.
   ngOnInit() {
-    this.contactos = this._contactosService.obtenerContactos();
+    this.contactos$ = this._contactosService.obtenerContactos();
   }
 
-  guardarContacto(contacto: Contacto): void{
-    this._contactosService.agregarContacto(contacto);
-    this.contactos = this._contactosService.obtenerContactos();
+  guardarContacto(contacto: Contacto): void {
+    this._contactosService
+        .agregarContacto(contacto)
+        .subscribe(() => {
+          this.contactos$ = this._contactosService.obtenerContactos();
+        });
   }
 
   eliminarContacto(contacto: string): void {
    this._contactosService.eliminarContacto(contacto);
-   this.contactos = this._contactosService.obtenerContactos();
+   this.contactos$ = this._contactosService.obtenerContactos();
   }
 
 
